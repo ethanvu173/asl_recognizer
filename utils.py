@@ -26,6 +26,7 @@ def extract_landmarks(detection_results):
     return coords
 
 # From the Google MediaPipe example for hand landmarks
+# License: https://www.apache.org/licenses/LICENSE-2.0
 # https://colab.research.google.com/github/googlesamples/mediapipe/blob/main/examples/hand_landmarker/python/hand_landmarker.ipynb
 def draw_landmarks_on_image(rgb_image, detection_result):
   hand_landmarks_list = detection_result.hand_landmarks
