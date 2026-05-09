@@ -8,10 +8,12 @@ from utils import draw_landmarks_on_image
 
 
 MODEL_PATH = "./hand_landmarker.task"
+CAMERA_IDX = 0
+EXIT_KEY = 'q'
 
 # Set up video capture and hand landmarking model
 classifier = joblib.load('asl_alpha_classifier.pkl')
-capture = cv2.VideoCapture(0)
+capture = cv2.VideoCapture(CAMERA_IDX)
 detector = init_hand_model(MODEL_PATH)
 
 success, frame = capture.read()
@@ -37,7 +39,7 @@ while success:
 
     cv2.imshow("ASL Alphabet Recognizer", frame)
     success, frame = capture.read()
-    if cv2.waitKey(1) & 0xFF == ord('q'):
+    if cv2.waitKey(1) & 0xFF == ord(EXIT_KEY):
         break
 
 capture.release()

@@ -10,10 +10,12 @@ SAMPLES_PER_CLASS = 300
 FILE_NAME = "output.csv"
 MODEL_PATH = "./hand_landmarker.task"
 EXIT_KEY = 27 # escape key
+CAMERA_IDX = 0
+
 
 # Load the hand landmarking model from MediaPipe
 detector = init_hand_model(MODEL_PATH)
-capture = cv2.VideoCapture(0)
+capture = cv2.VideoCapture(CAMERA_IDX)
 
 with open(FILE_NAME, "a", newline="") as csvfile:
     writer = csv.writer(csvfile)
