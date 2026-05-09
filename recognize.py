@@ -37,7 +37,7 @@ while success:
                         (10, 50),cv2.FONT_HERSHEY_SIMPLEX,
                         2, (0, 0, 255), 2)
 
-    cv2.imshow("ASL Alphabet Recognizer", frame)
+    cv2.imshow("Press q to quit", frame)
     success, frame = capture.read()
     if cv2.waitKey(1) & 0xFF == ord(EXIT_KEY):
         break

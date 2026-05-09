@@ -61,6 +61,6 @@ with open(FILE_NAME, "a", newline="") as csvfile:
         cv2.putText(frame, status, (10, 30),
                     cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2)
         frame = draw_landmarks_on_image(frame, output)
-        cv2.imshow("collect", frame)
+        cv2.imshow("Press esc to quit", frame)
 
         success, frame = capture.read()
