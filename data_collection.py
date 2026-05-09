@@ -21,9 +21,11 @@ with open(FILE_NAME, "a", newline="") as csvfile:
     label = ""
     count = 0
 
-    while True:
-        success, frame = capture.read()
+    success, frame = capture.read()
+    while success:
+        # Convert cv2 image (BGR by default) to RGB (what MediaPipe expects)
         frame_rgb = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+        # Convert the cv2 image into a format MediaPipe can use
         frame_mp = mp.Image(image_format=mp.ImageFormat.SRGB, data=frame_rgb)
 
         output = detector.detect(frame_mp)
@@ -58,3 +60,5 @@ with open(FILE_NAME, "a", newline="") as csvfile:
                     cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2)
         frame = draw_landmarks_on_image(frame, output)
         cv2.imshow("collect", frame)
+
+        success, frame = capture.read()
