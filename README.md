@@ -16,15 +16,13 @@ MediaPipe's hand detection model. It is provided by Google and available [here](
 
 ## Usage
 ### ASL Recognition
-Run the main recognition program by executing **recognize.py**. Sign with the right hand only, and the predicted letter with confidence will appear. Note that J and Z have not yet been implemented. If more than one webcam is connected, change the value of CAMERA_IDX until the desired camera is shown. 
+Run the main recognition program by executing **recognize.py**. Sign with the right hand only, and the predicted letter with confidence will appear. If a recognized letter is held for approximately 1 seconnd, it will be printed to the terminal. Sign "yes" in ASL to add a space, and sign "no" to delete a letter. Note that the program only recognizes the static variety of "no" (i.e. no movement in the sign).
 ### Hand Gesture Data Collection
 To gather custom data to retrain the ASL recognition model, execute **data_collection.py**. Sign a letter and type the corresponding letter to begin recording data. Change the value of SAMPLES_PER_CLASS to gather more or less data. The data is written to a file named *output.csv*. 
 ### ASL Model Retraining
 To retrain the ASL recognition model, ensure your custom data has been collected using data_collection.py. Exectute **train.py**. The model is outputted with the name *asl_alpha_classifier.pkl*.
 
 ## Roadmap
-* Improve model accuracy, especially with certain similar letters (e.g. m, n, t)
-* Implement recognition for J and Z (as these contain motion)
 * Implement recognition for left hand
 
 ## Attributions
