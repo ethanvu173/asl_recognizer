@@ -4,16 +4,15 @@ A project to recognize the American Sign Language alphabet using hand gestures f
 ## Requirements
 ### Libraries
 * OpenCV
-* MediaPipe (>0.10.0)
+* MediaPipe 0.10.0+
 * NumPy
 * scikit-learn
 * Joblib
 ### Files
-* asl_alpha_classifier.pkl
-> A provided classification model to predict the alphabet in ASL
-* hand_landmarker.task
-> MediaPipe's hand detection model. It is provided by Google and available [here](https://storage.googleapis.com/mediapipe-models/hand_landmarker/hand_landmarker/float16/1/hand_landmarker.task).
-* utils.py
+* **asl_alpha_classifier.pkl**<br>
+  A provided classification model to predict the alphabet in ASL
+* **hand_landmarker.task**<br>
+MediaPipe's hand detection model. It is provided by Google and available [here](https://storage.googleapis.com/mediapipe-models/hand_landmarker/hand_landmarker/float16/1/hand_landmarker.task).
 
 ## Usage
 ### ASL Recognition
