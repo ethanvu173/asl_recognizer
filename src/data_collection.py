@@ -7,7 +7,7 @@ from utils import init_hand_model
 
 
 SAMPLES_PER_CLASS = 300
-FILE_NAME = "output.csv"
+FILE_NAME = "../output.csv"
 MODEL_PATH = "../models/hand_landmarker.task"
 EXIT_KEY = 27 # escape key
 CAMERA_IDX = 0
@@ -36,7 +36,7 @@ with open(FILE_NAME, "a", newline="") as csvfile:
         if key == EXIT_KEY:
             break
         # If a letter keystroke is detected, set the program to start collecting
-        # the letter
+        # the letter S
         elif 65 <= key <= 90 or 97 <= key <= 122 and not collecting:
             collecting = True
             label = chr(key).upper()
